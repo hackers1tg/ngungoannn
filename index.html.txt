@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Chúc bạn Ngủ Ngoan 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #ff9a9e, #fad0c4 60%, #fcb69f);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-top: 15px;
+      opacity: 0.9;
+      animation: fadeIn 3s ease-in-out forwards;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ffdde1, 0 0 30px #ff758c;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #ff7eb3, 0 0 60px #ff4e50;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Trái tim bay */
+    .heart {
+      position: absolute;
+      color: #ffdde1;
+      font-size: 24px;
+      animation: floatUp 6s ease-in infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.3);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💞 Chúc bạn Ngủ Ngon 💞</h1>
+  <p>Ngủ coi chừng ma nó bắt đó</p>
+  
+  <script>
+    // Tạo trái tim bay ngẫu nhiên
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
